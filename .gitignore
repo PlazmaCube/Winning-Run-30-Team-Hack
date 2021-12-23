@@ -1,3 +1,11 @@
+# roms
 *.sfc
 *.smc
+
+# IDE stuff
 .idea/
+
+# BSNES stff
+*.srm
+*.bst
+*-usage.bin
