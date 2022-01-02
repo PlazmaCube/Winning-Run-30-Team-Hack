@@ -27,3 +27,36 @@
 ; Plazma experimenting, bear with me, this won't be perfect
 ; ORG $C34202        ;
 ; db $01, $01, $17, $25, $74,
+; Dom's command, pasted with the proper corrected bytes
+; this tells Asar that anything that comes after begins overwriting the bytes at address $C7BD02
+ORG $C7BD02
+
+; now, whatever we write below will end up in C7BD02, (just like if we had edited them in HxD)
+; let's stick a copy of the original table there:
+; first couple entries of the table
+db $01,$01,$13,$25,$74
+db $01,$01,$14,$25,$74
+db $01,$01,$15,$25,$74
+db $01,$01,$16,$25,$74
+
+; rest of the table (too lazy to clean this up)
+db $01,$0B,$13,$25,$74,$01,$0B,$14
+db $25,$74,$01,$0B,$15,$25,$74,$01
+db $0B,$16,$25,$74,$01,$0B,$17,$25
+db $74,$01,$17,$13,$25,$74,$01,$17
+db $14,$25,$74,$01,$17,$15,$25,$74
+db $01,$17,$16,$25,$74,$01,$17,$17
+db $25,$74,$00,$01,$01,$13,$25,$74
+db $01,$01,$14,$25,$74,$01,$01,$15
+db $25,$74,$01,$01,$16,$25,$74,$01
+db $0B,$13,$25,$74,$01,$0B,$14,$25
+db $74,$01,$0B,$15,$25,$74,$01,$0B
+db $16,$25,$74,$01,$0B,$17,$25,$74
+db $01,$16,$13,$25,$74,$01,$16,$14
+db $25,$74,$01,$16,$15,$25,$74,$01
+db $16,$16,$25,$74,$01,$16,$17,$25
+db $74,$00,$02,$01,$03,$06
+
+; now, add two new entries: (replace X's with whatever you want)
+db $01,$01,$17,$25,$74
+db $01,$01,$17,$25,$74
