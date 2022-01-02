@@ -23,3 +23,7 @@
 ; --------------------
 ; ORG C1E971
 ; LDA.L txt_team_names_right_justified,X
+; --------------------
+; Plazma experimenting, bear with me, this won't be perfect
+; ORG $C34202        ;
+; db $01, $01, $17, $25, $74,
